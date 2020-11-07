@@ -1,0 +1,22 @@
+body{
+    text-align: center;
+}
+
+#books{
+    display: flex;
+    flex-direction: row;
+}
+
+.starter-book{
+    height: 300px;
+    width: 300px;
+    
+}
+
+#add-book{
+    margin-left: auto;
+}
+
+ul{
+    list-style-type: none;
+}

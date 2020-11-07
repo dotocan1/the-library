@@ -1,15 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Object exercise</title>
+    <title>Library</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <h1>Welcome to your Library</h1>
     <h2>Add your books here:</h2>
+    <div>
+        <ul>
+            <li><label for="title">Book title:</label>
+                <input type="text" name="title" id="title"></li>
+            <li><label for="author">Auhor name:</label>
+                <input type="author" name="author" id="author"></li>
+            <li><label for="numberOfPages">Number of pages:</label>
+                <input type="numberOfPages" name="numberOfPages" id="numberOfPages"></li>
+            <li><label for="status">Status:</label>
+                <input type="status" id="status"></li>
+        </ul>
+    </div>
+    <div id="books">
+
+    </div>
     <button id="add-book">Add book</button>
+
+
     <script src="script.js"></script>
 </body>
+
 </html>
