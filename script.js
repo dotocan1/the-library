@@ -1,6 +1,7 @@
 let myLibrary = [];
 const booksContainer = document.getElementById('books-container');
 const newBookContainer = document.getElementById('new-book-container');
+let idCounter = 0;
 
 //makes the book container invisible
 newBookContainer.classList.toggle('invisibility');
@@ -54,6 +55,10 @@ addBookButton.addEventListener('click', function () {
     singleBookDiv.appendChild(deleteButton);
     deleteButton.textContent = 'Delete book';
 
+    singleBookDiv.setAttribute('data-id', idCounter);
+    idCounter++;
+    //console.log(idCounter);
+
     newBookContainer.classList.toggle('invisibility');
     document.getElementById('title').value = '';
     document.getElementById('author').value = '';
@@ -62,6 +67,10 @@ addBookButton.addEventListener('click', function () {
 });
 
 const newBookButton = document.getElementById('new-book-button');
-newBookButton.addEventListener('click', function(){
-    newBookContainer.classList.toggle('invisibility'); 
+newBookButton.addEventListener('click', function () {
+    newBookContainer.classList.toggle('invisibility');
+})
+
+deleteButton.addEventListener('click', function () {
+    
 })
