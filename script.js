@@ -1,5 +1,5 @@
 let myLibrary = [];
-const booksDiv = document.getElementById('books');
+const booksContainer = document.getElementById('books-container');
 const newBookContainer = document.getElementById('new-book-container');
 
 //makes the book container invisible
@@ -32,7 +32,7 @@ addBookButton.addEventListener('click', function () {
     //this creates a div for a new book
     let singleBookDiv = document.createElement('div');
     singleBookDiv.classList.add('starter-book');
-    booksDiv.appendChild(singleBookDiv);
+    booksContainer.appendChild(singleBookDiv);
 
     let bookTitle = document.createElement('h1');
     singleBookDiv.appendChild(bookTitle);
@@ -49,6 +49,10 @@ addBookButton.addEventListener('click', function () {
     let bookStatus = document.createElement('p');
     singleBookDiv.appendChild(bookStatus);
     bookStatus.textContent = status;
+
+    const deleteButton = document.createElement('button');
+    singleBookDiv.appendChild(deleteButton);
+    deleteButton.textContent = 'Delete book';
 
     newBookContainer.classList.toggle('invisibility');
     document.getElementById('title').value = '';
