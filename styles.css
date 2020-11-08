@@ -1,22 +1,30 @@
-body{
+body {
     text-align: center;
 }
 
-#books{
+#books {
     display: flex;
     flex-direction: row;
 }
 
-.starter-book{
+.starter-book {
     height: 300px;
     width: 300px;
-    
 }
 
-#add-book{
+add-book-button {
     margin-left: auto;
 }
 
-ul{
+ul {
     list-style-type: none;
+    margin-left: 0px;
+}
+
+.invisibility {
+    display: none;
+}
+
+#new-book-container {
+    
 }
