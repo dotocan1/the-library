@@ -1,7 +1,6 @@
 let myLibrary = [];
 const booksContainer = document.getElementById('books-container');
 const newBookContainer = document.getElementById('new-book-container');
-let idCounter = 0;
 
 //makes the book container invisible
 newBookContainer.classList.toggle('invisibility');
@@ -17,9 +16,6 @@ function addBookToLibrary(newBook) {
     myLibrary.push(newBook);
 }
 
-// myLibrary[0] = new Book('Moja biografija', 'Dominik Otocan', 169, 'read');
-// myLibrary[1] = new Book('Moja biografija-drugi deo', 'Dominik Otocan', 251, 'not read');
-
 const addBookButton = document.getElementById('add-book-button');
 addBookButton.addEventListener('click', function () {
     //gets values and calls the functions that stores the values
@@ -32,9 +28,9 @@ addBookButton.addEventListener('click', function () {
 
     //this creates a div for a new book
     let singleBookDiv = document.createElement('div');
-    singleBookDiv.classList.add('starter-book');
+    singleBookDiv.classList.add('new-book');
     booksContainer.appendChild(singleBookDiv);
-
+    //this stores the information into the book card
     let bookTitle = document.createElement('h1');
     singleBookDiv.appendChild(bookTitle);
     bookTitle.textContent = title;
@@ -50,27 +46,32 @@ addBookButton.addEventListener('click', function () {
     let bookStatus = document.createElement('p');
     singleBookDiv.appendChild(bookStatus);
     bookStatus.textContent = status;
-
+    
+    //creating the delete button
     const deleteButton = document.createElement('button');
+    deleteButton.classList.toggle('delete-button');
     singleBookDiv.appendChild(deleteButton);
     deleteButton.textContent = 'Delete book';
 
-    singleBookDiv.setAttribute('data-id', idCounter);
-    idCounter++;
-    //console.log(idCounter);
-
+    //resets values
     newBookContainer.classList.toggle('invisibility');
     document.getElementById('title').value = '';
     document.getElementById('author').value = '';
     document.getElementById('numberOfPages').value = '';
     document.getElementById('status').value = '';
+
+    //event delegation for the delete button
+    singleBookDiv.addEventListener('click', deleteBook);
 });
 
 const newBookButton = document.getElementById('new-book-button');
 newBookButton.addEventListener('click', function () {
     newBookContainer.classList.toggle('invisibility');
-})
+});
 
-deleteButton.addEventListener('click', function () {
-    
-})
+//deletes the selected book
+function deleteBook(evt){
+    if(evt.target.getAttribute('class') == 'delete-button'){
+        evt.target.parentElement.remove();
+    }
+}
