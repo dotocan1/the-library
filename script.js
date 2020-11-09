@@ -37,16 +37,21 @@ addBookButton.addEventListener('click', function () {
 
     let bookAuthor = document.createElement('p');
     singleBookDiv.appendChild(bookAuthor);
-    bookAuthor.textContent = author;
+    bookAuthor.textContent = 'Autor: ' +author;
 
     let bookNumberOfPages = document.createElement('p');
     singleBookDiv.appendChild(bookNumberOfPages);
-    bookNumberOfPages.textContent = numberOfPages;
+    bookNumberOfPages.textContent = 'Broj stranica: ' + numberOfPages;
 
-    let bookStatus = document.createElement('p');
-    singleBookDiv.appendChild(bookStatus);
-    bookStatus.textContent = status;
-    
+    // let bookStatus = document.createElement('p');
+    // singleBookDiv.appendChild(bookStatus);
+    // bookStatus.textContent = status;
+
+    //create checkbox
+    const checkBox = document.createElement('input');
+    checkBox.setAttribute('type', 'checkbox');
+    singleBookDiv.appendChild(checkBox);
+
     //creating the delete button
     const deleteButton = document.createElement('button');
     deleteButton.classList.toggle('delete-button');
@@ -62,6 +67,7 @@ addBookButton.addEventListener('click', function () {
 
     //event delegation for the delete button
     singleBookDiv.addEventListener('click', deleteBook);
+    console.log('hey');
 });
 
 const newBookButton = document.getElementById('new-book-button');
@@ -70,8 +76,8 @@ newBookButton.addEventListener('click', function () {
 });
 
 //deletes the selected book
-function deleteBook(evt){
-    if(evt.target.getAttribute('class') == 'delete-button'){
+function deleteBook(evt) {
+    if (evt.target.getAttribute('class') == 'delete-button') {
         evt.target.parentElement.remove();
     }
 }
