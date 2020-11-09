@@ -10,9 +10,11 @@ body {
 .new-book {
     height: 300px;
     width: 300px;
+    display: flex;
+    flex-direction: column;
 }
 
-add-book-button {
+#add-book-button {
     margin-left: auto;
 }
 
