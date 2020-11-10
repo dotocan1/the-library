@@ -1,7 +1,8 @@
-body{
+body {
     background-color: #36d9be;
     color: black;
 }
+
 h1, h2 {
     text-align: center;
 }
@@ -9,6 +10,25 @@ h1, h2 {
 #new-book-button {
     margin: 0 auto;
     display: block;
+    background-color: #7c36d9;
+    border-color: #7c36d9;
+    border-width: 0px;
+    width: 275px;
+    border-radius: 6.25rem;
+    margin-bottom: 10px;
+    height: 70px;
+}
+
+#add-book-button {
+    margin: 0 auto;
+    display: block;
+    background-color: #7c36d9;
+    border-color: #7c36d9;
+    border-width: 0px;
+    width: 100px;
+    border-radius: 6.25rem;
+    margin-bottom: 10px;
+    height: 25px;
 }
 
 #books-container {
@@ -28,7 +48,7 @@ h1, h2 {
     margin-top: 25px;
 }
 
-.new-book p{
+.new-book p {
     padding-left: 5px;
 }
 
@@ -51,7 +71,7 @@ input {
     width: 200px;
 }
 
-.delete-button{
+.delete-button {
     margin: 0 auto;
     display: block;
     background-color: #d9ab36;
@@ -63,7 +83,7 @@ input {
     height: 200px;
 }
 
-.checkBox{
+.checkBox {
     position: absolute;
     margin-top: 193px;
     margin-left: 161px;
