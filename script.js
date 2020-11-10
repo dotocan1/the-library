@@ -24,6 +24,7 @@ addBookButton.addEventListener('click', function () {
     title = document.getElementById('title').value;
     author = document.getElementById('author').value;
     numberOfPages = document.getElementById('numberOfPages').value;
+    status = 'Not read';
     let book = new Book(title, author, numberOfPages, status);
     myLibrary.push(book);
 
@@ -55,6 +56,7 @@ addBookButton.addEventListener('click', function () {
     let bookStatus = document.createElement('p');
     singleBookDiv.appendChild(bookStatus);
     bookStatus.classList.toggle('book-status');
+    bookStatus.textContent = 'Status: ' + status;
     bookStatus.setAttribute('data-id', idCounter);
 
     //creating the delete button
@@ -99,7 +101,7 @@ function deleteBook(evt) {
             
             for (let i = 0; i < bookStatus.length; i++) {
                 if (bookStatus[i].dataset.id == currentId)
-                    bookStatus[i].textContent = 'Read';
+                    bookStatus[i].textContent = 'Status: Read';
             }
         }
         else {
@@ -107,7 +109,7 @@ function deleteBook(evt) {
             
             for (let i = 0; i < bookStatus.length; i++) {
                 if (bookStatus[i].dataset.id == currentId)
-                    bookStatus[i].textContent = 'Not read';
+                    bookStatus[i].textContent = 'Status: Not read';
             }
         }
 
