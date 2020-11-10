@@ -1,5 +1,10 @@
-body {
+h1, h2 {
     text-align: center;
+}
+
+#new-book-button {
+    margin: 0 auto;
+    display: block;
 }
 
 #books-container {
@@ -15,20 +20,23 @@ body {
 }
 
 #new-book-form {
-    
+    margin: auto;
+    width: 500px;
+    height: 500px;
+    text-align: center;
 }
 
 ul {
     list-style-type: none;
-    text-align: justify;
     display: flex;
     flex-direction: column;
+    padding: 0px;
 }
 
 input {
     width: 200px;
 }
 
-.invisibility{
+.invisibility {
     display: none;
 }
