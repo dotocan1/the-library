@@ -24,7 +24,7 @@ addBookButton.addEventListener('click', function () {
     title = document.getElementById('title').value;
     author = document.getElementById('author').value;
     numberOfPages = document.getElementById('numberOfPages').value;
-    status = 'Not read';
+    status = 'Nije procitano';
     let book = new Book(title, author, numberOfPages, status);
     myLibrary.push(book);
 
@@ -41,23 +41,24 @@ addBookButton.addEventListener('click', function () {
 
     let bookAuthor = document.createElement('p');
     singleBookDiv.appendChild(bookAuthor);
-    bookAuthor.textContent = 'Autor: ' + author;
+    bookAuthor.innerHTML = '<b>Autor: </b>' + author;
 
     let bookNumberOfPages = document.createElement('p');
     singleBookDiv.appendChild(bookNumberOfPages);
-    bookNumberOfPages.textContent = 'Broj stranica: ' + numberOfPages;
+    bookNumberOfPages.innerHTML = '<b>Broj stranica: </b>' + numberOfPages;
+
+    let bookStatus = document.createElement('p');
+    singleBookDiv.appendChild(bookStatus);
+    bookStatus.classList.toggle('book-status');
+    //bookStatus.textContent = 'Status: ' + status;
+    bookStatus.innerHTML = '<b>Status: </b>' + status;
+    bookStatus.setAttribute('data-id', idCounter);
 
     //create checkbox
     const checkBox = document.createElement('input');
     checkBox.setAttribute('type', 'checkbox');
     checkBox.classList.toggle('checkBox');
     singleBookDiv.appendChild(checkBox);
-
-    let bookStatus = document.createElement('p');
-    singleBookDiv.appendChild(bookStatus);
-    bookStatus.classList.toggle('book-status');
-    bookStatus.textContent = 'Status: ' + status;
-    bookStatus.setAttribute('data-id', idCounter);
 
     //creating the delete button
     const deleteButton = document.createElement('button');
@@ -97,19 +98,19 @@ function deleteBook(evt) {
         console.log(bookStatus);
 
         if (evt.target.checked == true) {
-            myLibrary[currentId].status = 'Read';
-            
+            myLibrary[currentId].status = 'Procitano';
+
             for (let i = 0; i < bookStatus.length; i++) {
                 if (bookStatus[i].dataset.id == currentId)
-                    bookStatus[i].textContent = 'Status: Read';
+                    bookStatus[i].innerHTML = '<b>Status: </b>Procitano';
             }
         }
         else {
-            myLibrary[currentId].status = 'Not read';
-            
+            myLibrary[currentId].status = 'Nije procitano';
+
             for (let i = 0; i < bookStatus.length; i++) {
                 if (bookStatus[i].dataset.id == currentId)
-                    bookStatus[i].textContent = 'Status: Not read';
+                    bookStatus[i].innerHTML = '<b>Status: </b>Nije procitano';
             }
         }
 
