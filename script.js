@@ -1,10 +1,10 @@
 let myLibrary = [];
 const booksContainer = document.getElementById('books-container');
-const newBookContainer = document.getElementById('new-book-container');
+const newBookForm = document.getElementById('new-book-form');
 let idCounter = 0;
 
 //makes the book container invisible
-newBookContainer.classList.toggle('invisibility');
+newBookForm.classList.toggle('invisibility');
 
 function Book(title, author, numberOfPages) {
     this.title = title;
@@ -64,7 +64,7 @@ addBookButton.addEventListener('click', function () {
     deleteButton.textContent = 'Delete book';
 
     //resets values
-    newBookContainer.classList.toggle('invisibility');
+    newBookForm.classList.toggle('invisibility');
     document.getElementById('title').value = '';
     document.getElementById('author').value = '';
     document.getElementById('numberOfPages').value = '';
@@ -78,7 +78,7 @@ addBookButton.addEventListener('click', function () {
 
 const newBookButton = document.getElementById('new-book-button');
 newBookButton.addEventListener('click', function () {
-    newBookContainer.classList.toggle('invisibility');
+    newBookForm.classList.toggle('invisibility');
 });
 
 //deletes the selected book or changes status

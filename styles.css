@@ -14,19 +14,21 @@ body {
     flex-direction: column;
 }
 
-#add-book-button {
-    margin-left: auto;
+#new-book-form {
+    
 }
 
 ul {
     list-style-type: none;
-    margin-left: 0px;
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
 }
 
-.invisibility {
+input {
+    width: 200px;
+}
+
+.invisibility{
     display: none;
-}
-
-#new-book-container {
-    
 }
